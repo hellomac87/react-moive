@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './Movie.css';
 
+
 class Movie extends Component{
     render(){
+        console.log(this.props)
         return(
             <div>
-            <MoviePoster />
-            <h1>hello this is a moive</h1>
+            <MoviePoster poster={this.props.poster}/>
+            <h1>{this.props.title}</h1>
             </div>
         )
 
@@ -16,7 +18,7 @@ class Movie extends Component{
 class MoviePoster extends Component{
     render(){
         return(
-            <img src="http://static.tvtropes.org/pmwiki/pub/images/the-hunger-games-poster_3961.jpg" />
+            <img src={this.props.poster} />
         )
     }
 }
